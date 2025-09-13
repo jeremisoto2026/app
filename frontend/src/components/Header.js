@@ -6,6 +6,15 @@ import { auth } from '../firebase';
 const Header = ({ onShowAuth }) => {
   const { user, signOut } = useAuth();
 
+  const testFirebaseConnection = async () => {
+    try {
+      await signInAnonymously(auth);
+      alert('✅ Firebase Conectado - Login Anónimo Exitoso!');
+    } catch (error) {
+      alert(`❌ Error Firebase: ${error.code} - ${error.message}`);
+    }
+  };
+
   const handleSignOut = async () => {
     try {
       await signOut();

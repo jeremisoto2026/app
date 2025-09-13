@@ -1,5 +1,7 @@
 import React from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { signInAnonymously } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const Header = ({ onShowAuth }) => {
   const { user, signOut } = useAuth();
